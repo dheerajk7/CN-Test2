@@ -1,0 +1,87 @@
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div
+{
+    margin: 0;
+}
+.switch-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+input
+{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.switch-label
+{
+    height: 40px;
+    width: 60px;
+    background-color: lightpink;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.circle
+{
+    height: 100%;
+    width: 50%;
+    background-color:greenyellow;
+    border-radius: 50% ;
+}
+
+#switch-off-circle
+{
+    position: absolute;
+    left: 45%;
+    transition: 0.3s all ease-out;
+}
+
+#switch-on-label
+{
+    background-color: magenta;
+    position: absolute;
+}
+
+#switch-on-circle
+{
+    position: absolute;
+    left: 0%;
+    transition: 0.3s all ease-in;
+}
+
+#switch-off:checked + .switch-label
+{
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+#switch-on:checked + .switch-label
+{
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+#switch-off:checked ~ #switch-on-label #switch-on-circle
+{
+    left: 50%;
+}
+
+#switch-off:not(:checked) ~ #switch-off-label #switch-off-circle
+{
+    left: 0%;
+}
